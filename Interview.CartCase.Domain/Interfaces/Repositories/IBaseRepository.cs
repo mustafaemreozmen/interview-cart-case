@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Interview.CartCase.Domain.Entities;
 
 namespace Interview.CartCase.Domain.Interfaces
 {
@@ -11,11 +10,12 @@ namespace Interview.CartCase.Domain.Interfaces
     {
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter);
         Task<IEnumerable<TEntity>> GetManyAsync(Expression<Func<TEntity, bool>> filter = null);
-        Task InsertAsync(TEntity entity);
-        Task InsertAsync(IEnumerable<TEntity> entities);
-        Task UpdateAsync(TEntity entity);
-        Task UpdateAsync(IEnumerable<TEntity> entities);
-        Task DeleteAsync(TEntity entity);
-        Task DeleteAsync(IEnumerable<TEntity> entities);
+        Task<TEntity> InsertAsync(TEntity entity);
+        Task<IEnumerable<TEntity>> InsertAsync(IEnumerable<TEntity> entities);
+        Task<TEntity> UpdateAsync(string id, TEntity entity);
+        Task<IEnumerable<TEntity>> UpdateAsync(IEnumerable<TEntity> entities);
+        Task<TEntity> DeleteAsync(TId id);
+        Task<TEntity> DeleteAsync(TEntity entity);
+        Task<IEnumerable<TEntity>> DeleteAsync(IEnumerable<TEntity> entities);
     }
 }
