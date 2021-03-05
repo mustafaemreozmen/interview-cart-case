@@ -8,4 +8,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Interview.CartCase.Infrastructure.IoC\Interview.CartCase.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\Interview.CartCase.Persistence\Interview.CartCase.Persistence.csproj" />
+    <ProjectReference Include="..\Interview.CartCase.Domain\Interview.CartCase.Domain.csproj" />
+    <ProjectReference Include="..\Interview.CartCase.Application\Interview.CartCase.Application.csproj" />
+  </ItemGroup>
+
 </Project>
